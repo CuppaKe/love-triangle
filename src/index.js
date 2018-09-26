@@ -4,17 +4,18 @@
  */
  module.exports = function getLoveTrianglesCount(preferences = []) {
 
-var d = preferences
-    var count = 0;
-for (var i = 0; i < d.length; i++){
-     var first = d[i];
-     var second = d[first-1];
-     var third = d[second-1];
+    let d = preferences;
+    let count = 0;
 
- if ( third == i + 1  && first !==second && second !== third && third !== first){
+    for (let i = 0, length = d.length; i < length; i++) {
+        let first = d[i];
+        let second = d[first-1];
+        let third = d[second-1];
 
- 	count++} else continue
- }
+        if ( third == i + 1 && third !== first) {
+            count++ ;
+        } else continue;
+    }
     
     return Math.floor(count/3);
 }
